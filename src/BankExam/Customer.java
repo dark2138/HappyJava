@@ -61,8 +61,9 @@ public class Customer {
         }
 
 
-        System.out.print("새 계좌 번호 입력해주세요 : ");
-        String  accountNumber = in.nextLine();
+        String accountNumber = getAccountNumber2();  // 계좌 번호를 숫자로만 입력받기
+
+
 
         Account account1 = new Account();
         account1.setAccountNumber(accountNumber);
@@ -84,6 +85,26 @@ public class Customer {
         }
         throw new AccountNotFoundException("존재하는 계좌 번호가 없습니다. 다른 번호로 조회 부탁드립니다.");
     }
+
+
+
+    // 계좌 번호를 숫자로만 받는 메서드
+    private static String getAccountNumber2(){
+        String accountNumber = "";
+        boolean valid = false;
+        while (!valid) {
+            System.out.print("계좌 번호 (숫자만 입력): ");
+            try {
+                accountNumber = in.nextLine();
+                Long.parseLong(accountNumber);  // 숫자로 변환 가능하면 유효한 계좌 번호
+                valid = true;  // 숫자라면 반복문 종료
+            } catch (NumberFormatException e) {
+                System.out.println("계좌 번호는 숫자만 입력 가능합니다. 다시 시도하세요.");
+            }
+        }
+        return accountNumber;
+    }
+
 
 
 

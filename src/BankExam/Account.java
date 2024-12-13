@@ -8,6 +8,7 @@ public class Account {
     private String accountNumber;
     private String customerId;
     private Integer balance = 0;
+    private static Scanner in = new Scanner(System.in);
 
     public String getAccountNumber() {
         return accountNumber;
@@ -59,5 +60,8 @@ public class Account {
 
 
     }
+
+
+
 
 }

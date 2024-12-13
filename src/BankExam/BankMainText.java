@@ -140,6 +140,8 @@ public class BankMainText {
 
 
                     }
+
+
                     break;
                 case 6:
                     run = false;
