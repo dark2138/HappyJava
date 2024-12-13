@@ -77,10 +77,10 @@ public class BankMainText {
                         try {
                             Account account3 = customer3.findAccountNumber(accountNumber);
                             System.out.print("입금할 금액을 입력해주세요: ");
-                            int money3 = scanner.nextInt();
+                            int balance = scanner.nextInt();
 
 
-                            account3.deposit(money3);
+                            account3.deposit(balance);
 
                         } catch (AccountNotFoundException e) {
                             System.out.println(e.getMessage());
@@ -105,8 +105,8 @@ public class BankMainText {
                         try {
                             Account account4 = customer4.findAccountNumber(accountNumber);
                             System.out.print("출금할 금액을 입력해주세요: ");
-                            int money = scanner.nextInt();
-                            account4.withdraw(money);
+                            int balance2 = scanner.nextInt();
+                            account4.withdraw(balance2);
 
                         } catch (AccountNotFoundException e) {
                             System.out.println(e.getMessage());
